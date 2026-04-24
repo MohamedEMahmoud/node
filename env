@@ -1,0 +1,20 @@
+# domain example: saudigram.sa
+NODE_HOST=<domain>
+NODE_PORT=<port>
+# test - live (str)
+NODE_MODE=live
+
+
+KEY =/var/cpanel/ssl/apache_tls/<domain>/combined
+CERT =/var/cpanel/ssl/apache_tls/<domain>/certificates
+CA =/var/cpanel/ssl/apache_tls/<domain>/combined
+TIME_ZONE = Asia/Riyadh
+STORAGE = storage
+IMAGES = images
+ROOMS = rooms
+STORIES = stories
+PRIVATE_KEY = "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQD0ccNHOCKknIGL\nsSQpZPLvsL4HpieDXzyk2PQbIMh912zkUUOIJEPI2d9ty50+Dct9QNZZsIwgbj93\nuU8HsH1I/PnEjA+W3+oizXZgCOzrzksR9jL/X3ZSWLHjf0bBiL+ALC2FpDtAr2Ff\nLBgockzRjUBKZIVEDtjdNCRac/hvjDMvhE2gtQOUkdJety6OIgDr7Cpxc1f9IvEi\n8h1btNuM/7LLc3lkKd9U9wu3Ph4MzsoCGQbDbBvdqGt6RH25++jrh8el16TPpMZ9\nKaii24R0skJve3W+H7JDTDigRHITdedaWJ3vnaXen1U1pOmZu/RjOx/H+igZfsF1\nmsEsR3W7AgMBAAECggEACTvhlZIln4mYodnvihoZzJDPojhWQRyFjPCedVvirFDz\n+G1SxhTLSWNkO6CNGxKoVN3wevOJXObtQizfiGR+scAkq0EN4bQprbuMijTWxlLv\npl5iL3VqtyefPf8egXcUoiyJDQWsMKsEsZ9Xy5ytvDNqx09OyB22IX0JFoWk+omt\nYApzfApbBi5O4rhEG7JLFf4f6sN5clo/utQMQDa/tITHVaP58nzyjO24SRUjbSqM\n4wdyrCrAsDaIGCL3fDi0+XEnc1ymSf264Kr2tqQsU4GALQZ5PKzuID35AYHo91Hz\nulzYsCsSXwz3V8KaHRZiPZjklnj8+ZQx/JUT8uQJGQKBgQD9B8o5Hzhc91Oye2B9\nkNTaVix7/Cs7pzWtT2uIhQo77whyqEdUY2QDNV81h+2tZ3lhjIP4XdJZRmhjeq+C\nPU9NMR1Xb/wQLw+0hnK22YWblBT1I6AierAhBYekx7nly81msanav/Ev73QMgd+H\nztoDqSk2damRkOzvBEwcNEn/FQKBgQD3UC1BTIZdRyySs2lJsLRfdqLXJJWKV/Ud\nhf5r3M1OubtthiKAXcfa5TWc4jK1sJt6Sej79h5yEz8Iyn5gHdSkDeLQiCiwYJsv\nSj+/DgJcT+6lleXG0m4Al54wJZZ1rdUQ2A1omcJTuoASM2owxoXFb5p+BEloHUAk\nMPJ9IEBVjwKBgQDP+lMx2IOPhot5LQgGrcEHJcWys3cltS7doWYV9KSQ1szu0Xqv\n1nIiYQA9E9k8qsyObd0bjKKVVtX+zpzsRFCmdjRT5mwdMVGLZOdtfCXh1znStNGv\nBYE34z+3JaObSoUuX+HpN9ObPwr4LNf63P89+xEw/k2+pIzbeYDFvgUEcQKBgGZR\ni4eai3SH/87p30OXkeh1AsYT4rKL1WNTjoE9pstNWFflyNxm8EqFzfqMMwKsgIbF\nkVi86Le1crzGWiaV8OW2wQIZcwwVy95yz5DR0PQ0Nb3YGGp7oPspv06YHnmtY5tG\nZ7XA938Ah///uY1YdPvMQpSkXWJvx5uxjIFsGHHNAoGAJNKHAvswLe0RWOca990C\nf6CxMBPwhhtM2PqN+QmabAggil5dqJIqtICQYbjahOagOt1lkS4tLeOeBCaB0oun\nmnKc61p3VZpqlc2Q9M88W0lh00jsv8FA3dM+ZfAIyNFOFT8bZkDqsgEnG9Magidi\nO/Kecyl/uUa+gkbnSY28bq8=\n-----END PRIVATE KEY-----\n"
+NOTIFY_TOKEN_KEY                = /home/saudigra/public_html/nodeServer/AuthKey_BTYS3749FN.p8
+NOTIFY_TOKEN_KEY_ID             = BTYS3749FN
+NOTIFY_TOKEN_TEAM_ID            = BVZ9794FDX
+TOPIC_VOIP                      = com.aait.SaudiGram.voip
