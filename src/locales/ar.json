@@ -1,0 +1,25 @@
+{
+  "userIdRequired": "id  المستخدم مطلوب",
+  "userTypeRequired": "نوع المستخدم مطلوب",
+  "langRequired": "اللغة مطلوب",
+  "nameRequired": "الاسم مطلوب",
+  "deviceTypeRequired": "نوع الجهاز مطلوب",
+  "deviceIdRequired": "id  الجهاز مطلوب",
+  "sendLocation": "قام بارسال الموقع",
+  "somethingWrong": "حدث خطأ ما",
+  "blocked {{admin}} {{user}}": "قام {{admin}} بحظر {{user}}",
+  "unblocked {{admin}} {{user}}": "قام {{admin}} بفك الحظر {{user}}",
+  "leaveChat {{user}}": "لقد {{user}}  غادر المحادثه",
+  "send_text {{name}}": "قام {{name}} بإرسال نصيه",
+  "send_image {{name}}": "قام {{name}} بإرسال صورة",
+  "send_sound {{name}}": "قام {{name}} بإرسال تسجيل صوتى",
+  "send_video {{name}}": "قام {{name}} بإرسال فيديو",
+  "roomIdRequired": "خطأ في رقم الغرفه",
+  "invalidMessageType": "نوع الرساله لابد ان يكون  textاو image",
+  "bodyRequired": "body مطلوب",
+  "durationRequired": "المده مطلوب",
+  "durationInvalid": "المده غير صالحة",
+  "imageLinkRequired": "لينك الصوره مطلوب",
+  "mustNumber" :  "يجب أن يكون {{fieldName}} رقمًا"
+
+}

@@ -1,0 +1,25 @@
+{
+  "userIdRequired": "user id required",
+  "userTypeRequired": "user type required",
+  "langRequired": "lang required",
+  "nameRequired": "name required",
+  "deviceTypeRequired": "device type required",
+  "deviceIdRequired": "device id required",
+  "sendLocation": "send you location",
+  "somethingWrong": "something wrong",
+  "blocked {{admin}} {{user}}": "{{admin}} blocked {{user}}",
+  "unblocked {{admin}} {{user}}": "{{admin}} unblocked {{user}}",
+  "leaveChat {{user}}": "{{user}} left the chat",
+  "send_image {{name}}": "{{name}} sent a image",
+  "send_sound {{name}}": "{{name}} Sent an audio recording",
+  "send_video {{name}}": "{{name}} sent a video",
+  "send_text {{name}}": "{{name}} has sent a message",
+  "roomIdRequired": "wrong in the Room_id",
+  "invalidMessageType": "the type must be a text or image",
+  "bodyRequired": "body required",
+  "durationRequired": "duration required",
+  "durationInvalid": "duration invalid",
+  "imageLinkRequired":"link from image is required",
+  "mustNumber" :  "{{fieldName}} must be a number"
+
+}
