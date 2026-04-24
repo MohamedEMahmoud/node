@@ -29,16 +29,6 @@ class ReturnObjectHelper {
         };
 
         console.log("messageData",messageData);
-        if (data.type === 'rate') {
-            messageData.data = {
-                course_id: data.course_id || null,
-                course_name: data.course_name || null,
-                avg_rate: data.avg_rate || null,
-                is_rated: data.is_rated || false,
-                image: data.image || null
-            };
-        }
-
         return messageData;
     }
 
