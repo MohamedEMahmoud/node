@@ -37,14 +37,14 @@ class SocketHelper {
         try {
             console.log("online", socket.userId);
 
-            const user = await this._usersRepository.find({
+            const user = await this.userTypeRepo.get(socket.userType).find({
                 where: {
                     id: socket.userId
                 }
             });
 
             if (Object.keys(user).includes('online') && !user.online) {
-                await this._usersRepository.update({
+                await this.userTypeRepo.get(socket.userType).update({
                     set: {
                         online: 1,
                         last_active_at: null
@@ -68,14 +68,14 @@ class SocketHelper {
 
             console.log("offline", socket.userId);
 
-            const user = await this._usersRepository.find({
+            const user = await this.userTypeRepo.get(socket.userType).find({
                 where: {
                     id: socket.userId
                 }
             });
 
             if (Object.keys(user).includes('last_active_at') && user.online) {
-                await this._usersRepository.update({
+                await this.userTypeRepo.get(socket.userType).update({
                     set: {
                         online: 0,
                         last_active_at: new Date()
