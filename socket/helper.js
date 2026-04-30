@@ -15,6 +15,7 @@ class SocketHelper {
         this._fcmService                     = FCM;
         this._returnObjectHelper             = ReturnObjectHelper;
         this._typeMap                        = new Map(morph.map(({ key, value }) => [key, value]));
+        this._reverseTypeMap                 = new Map(morph.map(({ key, value }) => [value, key]));
         this.userTypeRepo                   = new Map([
             ['user', new Repo('users')],
             ['provider', new Repo('providers')],
@@ -197,10 +198,9 @@ class SocketHelper {
                     is_seen: messageNotifications.is_seen||1
                 });
 
-            console.log("messageReceived",messageReceived);
             io.to(String(enrichedData.room_id))
                 .emit('message-received', messageReceived);
-
+                
             await this._sendOfflineNotifications(enrichedData, members);
 
             console.log("send message success", {
@@ -352,23 +352,24 @@ class SocketHelper {
         const usersInsideChat = new Set(
             chat
                 ? Array.from(chat.values()).map(user => {
-                    const typeStr = this._typeMap.get(user.type); 
-                    return `${typeStr}_${user.id}`;
+                    return `${user.type}_${user.id}`;
                 })
                 : []
         );
 
 
-        const senderType = this._typeMap.get(messageData.sender_type);
-        const senderKey  = `${senderType}_${messageData.sender_id}`;
+        const senderTypeKey = this._reverseTypeMap.get(this._typeMap.get(messageData.sender_type)) || messageData.sender_type;
+        const senderKey  = `${senderTypeKey}_${messageData.sender_id}`;
 
         return members.map(member => {
 
 
             const memberType = member.memberable_type;
-            const memberKey  = `${memberType}_${member.memberable_id}`;
 
-            const isSender = memberKey === senderKey;
+            const memberTypeKey = this._reverseTypeMap.get(memberType) || memberType;
+            const memberKey  = `${memberTypeKey}_${member.memberable_id}`;
+
+            const isSender = memberKey === senderKey || Number(member.memberable_id) === Number(messageData.sender_id);
 
             const isSeen = isSender || usersInsideChat.has(memberKey) ? 1 : 0;
 
@@ -402,24 +403,26 @@ class SocketHelper {
 
             const usersInsideChat = new Set(
                 Array.from(chat.values()).map(user => {
-                    const typeStr = this._typeMap.get(user.type);
-                    return `${typeStr}_${user.id}`;
+                    return `${user.type}_${user.id}`;
                 })
             );
 
             console.log("usersInsideChat",usersInsideChat);
-            const senderType = this._typeMap.get(messageData.sender_type);
+
+            const senderTypeKey = this._reverseTypeMap.get(this._typeMap.get(messageData.sender_type)) || messageData.sender_type;
 
             const senderKey =
-                `${senderType}_${messageData.sender_id}`;
+                `${senderTypeKey}_${messageData.sender_id}`;
 
             const receivers = members.filter(member => {
 
 
+                const memberTypeKey = this._reverseTypeMap.get(member.memberable_type) || member.memberable_type;
                 const memberKey =
-                    `${member.memberable_type}_${member.memberable_id}`;
+                    `${memberTypeKey}_${member.memberable_id}`;
 
-                if (memberKey === senderKey) {
+                const isSender = memberKey === senderKey || Number(member.memberable_id) === Number(messageData.sender_id);
+                if (isSender) {
                     return false;
                 }
 
