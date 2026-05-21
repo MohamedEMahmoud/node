@@ -201,7 +201,11 @@ class SocketHelper {
             io.to(String(enrichedData.room_id))
                 .emit('message-received', messageReceived);
                 
-            await this._sendOfflineNotifications(enrichedData, members);
+            const chatRoom = this._chats.get(String(enrichedData.room_id));
+            
+            if (!chatRoom || chatRoom.size <= 1) {
+                await this._sendOfflineNotifications(enrichedData, members);
+            }
 
             console.log("send message success", {
                 message_id: insertId
