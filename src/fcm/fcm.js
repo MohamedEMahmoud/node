@@ -31,13 +31,26 @@ class FCMService {
     }
 
     _formatBody(data, lang) {
+        const locale = lang || 'ar';
+
         if (data.type === 'text') {
-            return data.body;
+            return data.body || '';
         }
 
-        console.log("data.type",data);
+        // Image / file attachments: short translated body for the notification tray.
+        if (data.type === 'image' || data.type === 'file') {
+            return i18n.__({ phrase: 'attachment_sent', locale });
+        }
 
-        return i18n.__({phrase: `send_${data.type} {{name}}`, locale: lang}, {name: data.sender_name});
+        const phrase = `send_${data.type} {{name}}`;
+        const translated = i18n.__({ phrase, locale }, { name: data.sender_name || '' });
+
+        // i18n returns the phrase itself when the key is missing.
+        if (!translated || translated === phrase) {
+            return i18n.__({ phrase: 'attachment_sent', locale });
+        }
+
+        return translated;
     }
 
     _truncateText(text, maxLength = 200) {
