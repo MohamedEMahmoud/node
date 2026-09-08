@@ -20,6 +20,6 @@
   "durationRequired": "المده مطلوب",
   "durationInvalid": "المده غير صالحة",
   "imageLinkRequired": "لينك الصوره مطلوب",
-  "mustNumber" :  "يجب أن يكون {{fieldName}} رقمًا"
-
+  "mustNumber" :  "يجب أن يكون {{fieldName}} رقمًا",
+  "attachment_sent": "تم إرفاق ملف"
 }
