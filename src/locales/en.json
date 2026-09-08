@@ -20,6 +20,7 @@
   "durationRequired": "duration required",
   "durationInvalid": "duration invalid",
   "imageLinkRequired":"link from image is required",
-  "mustNumber" :  "{{fieldName}} must be a number"
+  "mustNumber" :  "{{fieldName}} must be a number",
+  "attachment_sent": "A file was attached"
 
 }
